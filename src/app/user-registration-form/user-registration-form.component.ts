@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
-  styleUrls: ['./user-registration-form.component.scss'],
+  styleUrls: ['./user-registration-form.component.css'],
 })
 export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
@@ -25,6 +25,7 @@ export class UserRegistrationFormComponent implements OnInit {
 
   // This is the function responsible for sending the form inputs to the backend
   registerUser(): void {
+    console.log('at list it is binded');
     this.fetchApiData.userRegistration(this.userData).subscribe(
       (result) => {
         // Logic for a successful user registration goes here! (To be implemented)
