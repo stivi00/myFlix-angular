@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://myflixapi-50hz.onrender.com';
+const apiUrl = 'https://myflixapi-50hz.onrender.com/';
 @Injectable({
   providedIn: 'root',
 })

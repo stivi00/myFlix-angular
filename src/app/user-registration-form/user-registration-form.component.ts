@@ -25,7 +25,6 @@ export class UserRegistrationFormComponent implements OnInit {
 
   // This is the function responsible for sending the form inputs to the backend
   registerUser(): void {
-    console.log('at list it is binded');
     this.fetchApiData.userRegistration(this.userData).subscribe(
       (result) => {
         // Logic for a successful user registration goes here! (To be implemented)
