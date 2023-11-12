@@ -21,6 +21,7 @@ export class UserRegistrationService {
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails);
+    // THIS IS NEEDED LINE BUT HAS ERROR
     // .pipe(catchError(this.handleError));
   }
 
