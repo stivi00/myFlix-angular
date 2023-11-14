@@ -1,4 +1,4 @@
-<div style="display: flex">
+<div class="movie-container">
   <mat-card *ngFor="let movie of movies" class="card">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
@@ -12,7 +12,7 @@
       class="responsive-image"
     />
     <mat-card-actions>
-      <button mat-raised-button color="primary">Genre</button>
+      <button mat-button color="primary">Genre</button>
       <button mat-button color="primary">Director</button>
       <button mat-button color="primary">Synopsis</button>
       <mat-icon>favorite_border</mat-icon>
