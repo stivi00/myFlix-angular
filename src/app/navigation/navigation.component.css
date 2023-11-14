@@ -1,0 +1,9 @@
+.navbar {
+    background-color: #ededed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    color: aliceblue;
+}

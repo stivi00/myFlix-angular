@@ -1,1 +1,18 @@
-<p>navigation works!</p>
+<mat-toolbar class="navbar">
+  <div>
+    <a mat-button (click)="toMovies()" target="_blank" class="logo">.MyFlix.</a>
+  </div>
+
+  <div>
+    <button
+      mat-stroked-button
+      aria-label="user profile button"
+      (click)="toProfile()"
+    >
+      Profile
+    </button>
+    <button mat-stroked-button aria-label="logout button" (click)="toLogout()">
+      Logout
+    </button>
+  </div>
+</mat-toolbar>
