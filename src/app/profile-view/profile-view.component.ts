@@ -53,7 +53,7 @@ export class ProfileViewComponent implements OnInit {
       (data) => {
         localStorage.setItem('user', JSON.stringify(data));
         localStorage.setItem('Username', data.Username);
-        // console.log(data);
+        console.log('user updated', data);
         this.snackBar.open('User has been updated', 'OK', {
           duration: 2000,
         });

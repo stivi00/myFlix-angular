@@ -1,5 +1,5 @@
 .profile-container {
-    /* border: 1px solid red; */
+    text-align: center;
 }
 
 .info-container {
@@ -7,7 +7,7 @@
     
 }
 
-.info {
-    border: 1px solid green;
-    
+.user-form{
+    max-width: 400px; 
+    margin: 0 auto; 
 }
