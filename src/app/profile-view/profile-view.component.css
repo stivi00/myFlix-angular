@@ -1,13 +1,30 @@
 .profile-container {
-    text-align: center;
+    /* text-align: center; */
+    width: 80%;
+    margin: auto;
 }
 
 .info-container {
-    /* border: 1px solid blue; */
-    
+    margin-top: 50px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #ededed;
+
+}
+
+.favorites {
+    justify-content: center;
+}
+
+.image-container {
+    max-width: 500px;
+    padding: 5px;
+    background-color: #ededed;
 }
 
 .user-form{
     max-width: 400px; 
     margin: 0 auto; 
+
 }
