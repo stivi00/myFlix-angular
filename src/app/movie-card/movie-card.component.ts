@@ -41,8 +41,8 @@ export class MovieCardComponent implements OnInit {
   }
 
   addFavorite(id: string): void {
-    this.fetchApiData.addFavoriteMovie(id).subscribe((Response: any) => {
-      this.snackBar.open('added to favorites', 'OK', {
+    this.fetchApiData.addFavoriteMovie(id).subscribe(() => {
+      this.snackBar.open('Movie added to favorites', 'OK', {
         duration: 2000,
       });
     });
@@ -50,5 +50,13 @@ export class MovieCardComponent implements OnInit {
 
   isFavorite(id: string): boolean {
     return this.fetchApiData.isFavorite(id);
+  }
+
+  removeFavorite(id: string): void {
+    this.fetchApiData.deleteFavoriteMovie(id).subscribe(() => {
+      this.snackBar.open('Movie is removed from favorites', 'OK', {
+        duration: 2000,
+      });
+    });
   }
 }
