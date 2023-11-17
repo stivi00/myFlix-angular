@@ -12,7 +12,15 @@
       class="responsive-image"
     />
     <mat-card-actions>
-      <button mat-button color="primary">Genre</button>
+      <button
+        mat-button
+        color="primary"
+        (click)="getGenre(movie.Genre.Name, movie.Genre.Description)"
+        matTooltip="Genre"
+      >
+        Genre
+      </button>
+
       <button mat-button color="primary">Director</button>
       <button
         mat-button

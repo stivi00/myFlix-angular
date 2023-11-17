@@ -40,6 +40,17 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  // open genre details
+  getGenre(name: string, description: string): void {
+    this.dialog.open(MovieInfoComponent, {
+      data: {
+        Title: name,
+        Description: description,
+      },
+    });
+  }
+
+  // add movie favorites
   addFavorite(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe(() => {
       this.snackBar.open('Movie added to favorites', 'OK', {
@@ -48,10 +59,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  // check if movie is in a list of favorites
   isFavorite(id: string): boolean {
     return this.fetchApiData.isFavorite(id);
   }
 
+  // remove movie from favorites
   removeFavorite(id: string): void {
     this.fetchApiData.deleteFavoriteMovie(id).subscribe(() => {
       this.snackBar.open('Movie is removed from favorites', 'OK', {

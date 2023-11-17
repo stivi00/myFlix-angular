@@ -48,6 +48,8 @@ export class FetchApiDataService {
   // Api call for the get one movie endpoint
   getOneMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log('title', title);
+
     return this.http
       .get(apiUrl + 'movies/' + title, {
         headers: new HttpHeaders({
@@ -70,10 +72,10 @@ export class FetchApiDataService {
   }
 
   // Api call for the get one genre endpoint
-  getOneGenre(genreName: string): Observable<any> {
+  getOneGenre(Name: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'movies/genre/' + genreName, {
+      .get(apiUrl + 'movies/genres/' + Name, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
