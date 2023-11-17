@@ -21,7 +21,15 @@
       >
         Synopsis
       </button>
-      <mat-icon>favorite_border</mat-icon>
+
+      <button
+        *ngIf="!isFavorite(movie._id)"
+        mat-icon-button
+        (click)="addFavorite(movie._id)"
+        matTooltip="Add to favorites"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MovieInfoComponent } from '../movie-info/movie-info.component';
 
 @Component({
@@ -13,7 +14,8 @@ export class MovieCardComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -36,5 +38,17 @@ export class MovieCardComponent implements OnInit {
         Description: description,
       },
     });
+  }
+
+  addFavorite(id: string): void {
+    this.fetchApiData.addFavoriteMovie(id).subscribe((Response: any) => {
+      this.snackBar.open('added to favorites', 'OK', {
+        duration: 2000,
+      });
+    });
+  }
+
+  isFavorite(id: string): boolean {
+    return this.fetchApiData.isFavorite(id);
   }
 }
