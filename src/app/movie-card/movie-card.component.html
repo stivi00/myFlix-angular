@@ -21,7 +21,14 @@
         Genre
       </button>
 
-      <button mat-button color="primary">Director</button>
+      <button
+        mat-button
+        color="primary"
+        (click)="getDirector(movie.Director.Name, movie.Director.Bio)"
+        matTooltip="Director"
+      >
+        Director
+      </button>
       <button
         mat-button
         color="primary"

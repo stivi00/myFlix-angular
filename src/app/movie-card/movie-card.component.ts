@@ -50,6 +50,16 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  // open director details
+  getDirector(name: string, bio: string): void {
+    this.dialog.open(MovieInfoComponent, {
+      data: {
+        Title: name,
+        Description: bio,
+      },
+    });
+  }
+
   // add movie favorites
   addFavorite(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe(() => {
