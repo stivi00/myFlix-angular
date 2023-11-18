@@ -1,9 +1,19 @@
+/**
+ * @fileoverview
+ * @module app/profile-view
+ * @description This module contains the ProfileViewComponent.
+ */
+
 import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { formatDate } from '@angular/common';
 
+/**
+ * @classdesc
+ * ProfileViewComponent represents a component for viewing and managing user profile information.
+ * @class
+ */
 @Component({
   selector: 'app-profile-view',
   templateUrl: './profile-view.component.html',
@@ -14,6 +24,14 @@ export class ProfileViewComponent implements OnInit {
 
   favoriteMovies: any[] = [];
 
+  /**
+   * @member {Object} userData - Object to store user data received as input.
+   * @property {string} Name - The name of the user.
+   * @property {string} Username - The username of the user.
+   * @property {string} Password - The password of the user.
+   * @property {string} Email - The email of the user.
+   * @property {string} Birthday - The birthday of the user.
+   */
   @Input() userData = {
     Name: '',
     Username: '',
@@ -22,6 +40,12 @@ export class ProfileViewComponent implements OnInit {
     Birthday: '',
   };
 
+  /**
+   * @constructor
+   * @param {FetchApiDataService} fetchApiData - Service for fetching API data.
+   * @param {MatSnackBar} snackBar - Service for displaying snack bar notifications.
+   * @param {Router} router - Angular Router service for navigation.
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
@@ -32,7 +56,10 @@ export class ProfileViewComponent implements OnInit {
     this.getUser();
   }
 
-  //when loading component get all user data and favorite movies list
+  /**
+   * @method
+   * @description Fetches user data and favorite movies when the component is loaded.
+   */
   getUser(): void {
     this.fetchApiData.getOneUser().subscribe((response: any) => {
       this.user = response;
@@ -47,7 +74,10 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
-  // this will edit the user information
+  /**
+   * @method
+   * @description Edits user information and updates local storage.
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe(
       (data) => {
@@ -67,7 +97,10 @@ export class ProfileViewComponent implements OnInit {
     );
   }
 
-  // deleting the user account will permanently erase the acount and return to the welcome screen
+  /**
+   * @method
+   * @description Deletes the user account and navigates to the welcome screen.
+   */
   deleteUser(): void {
     if (confirm('are you sure?')) {
       this.router.navigate(['welcome']).then(() => {
