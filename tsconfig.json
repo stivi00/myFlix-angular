@@ -22,7 +22,8 @@
     "lib": ["ES2022", "dom"]
   },
   "typedocOptions": {
-    "entryPoints": ["src/index.ts"],
+    "entryPoints": ["src/main.ts"],
+    "entryPointStrategy": "expand",
     "out": "docs"
   },
   "angularCompilerOptions": {
